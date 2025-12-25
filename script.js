@@ -28,7 +28,8 @@ const DOM = {
   skillsTools: document.getElementById('skills-tools'),
   skillsDomains: document.getElementById('skills-domains'),
   projectsGrid: document.getElementById('projects-grid'),
-  timeline: document.getElementById('timeline'),
+  timelineExperience: document.getElementById('timeline-experience'),
+  timelineEducation: document.getElementById('timeline-education'),
   
   // Dynamic text elements
   heroName: document.getElementById('hero-name'),
@@ -187,13 +188,10 @@ class ContentRenderer {
   // Render timeline (experience + education)
   renderTimeline() {
     const { experience, education } = this.data;
-    if (!DOM.timeline) return;
-
-    let timelineHTML = '';
 
     // Render experience
-    if (experience && experience.length > 0) {
-      timelineHTML += experience.map(exp => `
+    if (DOM.timelineExperience && experience && experience.length > 0) {
+      DOM.timelineExperience.innerHTML = experience.map(exp => `
         <div class="timeline-item ${exp.current ? 'current' : ''} animate-on-scroll">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -205,18 +203,14 @@ class ContentRenderer {
             <ul class="timeline-description">
               ${exp.description.map(item => `<li>${item}</li>`).join('')}
             </ul>
-            <span class="timeline-type">
-              <i data-lucide="briefcase"></i>
-              Work
-            </span>
           </div>
         </div>
       `).join('');
     }
 
     // Render education
-    if (education && education.length > 0) {
-      timelineHTML += education.map(edu => `
+    if (DOM.timelineEducation && education && education.length > 0) {
+      DOM.timelineEducation.innerHTML = education.map(edu => `
         <div class="timeline-item ${edu.current ? 'current' : ''} animate-on-scroll">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -229,16 +223,10 @@ class ContentRenderer {
             <ul class="timeline-description">
               ${edu.details.map(item => `<li>${item}</li>`).join('')}
             </ul>
-            <span class="timeline-type">
-              <i data-lucide="graduation-cap"></i>
-              Education
-            </span>
           </div>
         </div>
       `).join('');
     }
-
-    DOM.timeline.innerHTML = timelineHTML;
 
     // Re-initialize Lucide icons
     if (typeof lucide !== 'undefined') {
