@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raghusrinivasan Venkatesan - Aspiring AI Engineer & Data Science Enthusiast. Building intelligent systems that make a difference.">
+  <meta name="keywords" content="AI Engineer, Data Science, Machine Learning, Portfolio, Developer">
+  <meta name="author" content="Raghusrinivasan Venkatesan">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Raghusrinivasan Venkatesan | AI Engineer">
+  <meta property="og:description" content="Aspiring AI Engineer & Data Science Enthusiast">
+  <meta property="og:type" content="website">
+  
+  <title>Raghu Venkatesan | AI Engineer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">RV</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+      
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+    </div>
+    
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting animate-fade-up">
+          <span class="greeting-wave">👋</span> Hello, I'm
+        </p>
+        <h1 class="hero-name animate-fade-up delay-1" id="hero-name">
+          Raghusrinivasan Venkatesan
+        </h1>
+        <h2 class="hero-title animate-fade-up delay-2" id="hero-title">
+          <span class="title-prefix">I'm an</span>
+          <span class="title-highlight">Aspiring AI Engineer</span>
+        </h2>
+        <p class="hero-tagline animate-fade-up delay-3" id="hero-tagline">
+          Building intelligent systems that make a difference
+        </p>
+        
+        <div class="hero-cta animate-fade-up delay-4">
+          <a href="#projects" class="btn btn-primary">
+            <i data-lucide="folder-open"></i>
+            View My Work
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i data-lucide="mail"></i>
+            Contact Me
+          </a>
+        </div>
+        
+        <div class="hero-stats animate-fade-up delay-5" id="hero-stats">
+          <!-- Stats loaded from data.json -->
+        </div>
+      </div>
+      
+      <div class="hero-visual animate-fade-left delay-2">
+        <div class="hero-card">
+          <div class="card-header">
+            <div class="card-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="card-title">portfolio.js</span>
+          </div>
+          <pre class="card-code"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Raghu"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"AI Engineer"</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">"ML"</span>, <span class="code-string">"Python"</span>, <span class="code-string">"Data"</span>],
+  <span class="code-property">passion</span>: <span class="code-string">"Building AI"</span>,
+  <span class="code-method">hireable</span>: () => <span class="code-boolean">true</span>
+};</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <i data-lucide="chevrons-down"></i>
+    </a>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">
+          <i data-lucide="user"></i> Introduction
+        </span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Get to know me better</p>
+      </header>
+      
+      <div class="about-content">
+        <div class="about-image animate-on-scroll">
+          <div class="image-wrapper">
+            <div class="image-placeholder">
+              <i data-lucide="user-circle"></i>
+              <span>Photo</span>
+            </div>
+            <!-- Replace with: <img src="assets/profile.jpg" alt="Raghusrinivasan Venkatesan"> -->
+          </div>
+          <div class="image-decoration"></div>
+        </div>
+        
+        <div class="about-text animate-on-scroll">
+          <h3 class="about-heading">
+            Passionate about <span class="text-gradient">AI & Data Science</span>
+          </h3>
+          <p class="about-bio" id="about-bio">
+            Will add bio later. This is a placeholder for a compelling introduction about your journey, passions, and what drives you in the world of AI and Data Science.
+          </p>
+          <p class="about-bio">
+            Currently based in San Diego, I'm always excited to collaborate on innovative projects that push the boundaries of what's possible with artificial intelligence.
+          </p>
+          
+          <div class="about-info">
+            <div class="info-item">
+              <i data-lucide="map-pin"></i>
+              <span id="about-location">San Diego, CA</span>
+            </div>
+            <div class="info-item">
+              <i data-lucide="mail"></i>
+              <span id="about-email">r1venkatesan@ucsd.edu</span>
+            </div>
+            <div class="info-item">
+              <i data-lucide="graduation-cap"></i>
+              <span>UC San Diego</span>
+            </div>
+          </div>
+          
+          <div class="about-cta">
+            <a href="#" class="btn btn-primary" id="resume-btn">
+              <i data-lucide="download"></i>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              Let's Talk
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">
+          <i data-lucide="wrench"></i> Expertise
+        </span>
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">Tools and technologies I work with</p>
+      </header>
+      
+      <div class="skills-grid" id="skills-grid">
+        <!-- Skills loaded from data.json -->
+        
+        <div class="skill-category animate-on-scroll">
+          <div class="category-header">
+            <div class="category-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-tags" id="skills-languages">
+            <!-- Loaded from data.json -->
+          </div>
+        </div>
+        
+        <div class="skill-category animate-on-scroll">
+          <div class="category-header">
+            <div class="category-icon">
+              <i data-lucide="layers"></i>
+            </div>
+            <h3>Frameworks</h3>
+          </div>
+          <div class="skill-tags" id="skills-frameworks">
+            <!-- Loaded from data.json -->
+          </div>
+        </div>
+        
+        <div class="skill-category animate-on-scroll">
+          <div class="category-header">
+            <div class="category-icon">
+              <i data-lucide="settings"></i>
+            </div>
+            <h3>Tools</h3>
+          </div>
+          <div class="skill-tags" id="skills-tools">
+            <!-- Loaded from data.json -->
+          </div>
+        </div>
+        
+        <div class="skill-category animate-on-scroll">
+          <div class="category-header">
+            <div class="category-icon">
+              <i data-lucide="brain"></i>
+            </div>
+            <h3>Domains</h3>
+          </div>
+          <div class="skill-tags" id="skills-domains">
+            <!-- Loaded from data.json -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">
+          <i data-lucide="folder-git-2"></i> Portfolio
+        </span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Some things I've built</p>
+      </header>
+      
+      <div class="projects-grid" id="projects-grid">
+        <!-- Projects loaded from data.json -->
+      </div>
+      
+      <div class="projects-cta">
+        <a href="https://github.com/codeFafnir" target="_blank" rel="noopener" class="btn btn-outline">
+          <i data-lucide="github"></i>
+          View All on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE SECTION ========== -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">
+          <i data-lucide="briefcase"></i> Journey
+        </span>
+        <h2 class="section-title">Experience & Education</h2>
+        <p class="section-subtitle">My professional journey</p>
+      </header>
+      
+      <div class="timeline" id="timeline">
+        <!-- Timeline loaded from data.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">
+          <i data-lucide="send"></i> Get in Touch
+        </span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">I'm always open to new opportunities</p>
+      </header>
+      
+      <div class="contact-content">
+        <div class="contact-info animate-on-scroll">
+          <div class="contact-text">
+            <h3>Have a project in mind?</h3>
+            <p>
+              Whether you have a question, want to collaborate, or just want to say hi, 
+              feel free to reach out. I'll get back to you as soon as possible!
+            </p>
+          </div>
+          
+          <div class="contact-methods">
+            <a href="mailto:r1venkatesan@ucsd.edu" class="contact-method">
+              <div class="method-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="method-info">
+                <span class="method-label">Email</span>
+                <span class="method-value" id="contact-email">r1venkatesan@ucsd.edu</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="method-arrow"></i>
+            </a>
+            
+            <a href="https://github.com/codeFafnir" target="_blank" rel="noopener" class="contact-method" id="contact-github">
+              <div class="method-icon">
+                <i data-lucide="github"></i>
+              </div>
+              <div class="method-info">
+                <span class="method-label">GitHub</span>
+                <span class="method-value">@codeFafnir</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="method-arrow"></i>
+            </a>
+            
+            <a href="#" target="_blank" rel="noopener" class="contact-method" id="contact-linkedin">
+              <div class="method-icon">
+                <i data-lucide="linkedin"></i>
+              </div>
+              <div class="method-info">
+                <span class="method-label">LinkedIn</span>
+                <span class="method-value">Connect with me</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="method-arrow"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="contact-card animate-on-scroll">
+          <div class="card-decoration">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <h4>Ready to work together?</h4>
+          <p>Let's create something amazing!</p>
+          <a href="mailto:r1venkatesan@ucsd.edu" class="btn btn-primary btn-lg">
+            <i data-lucide="mail"></i>
+            Send an Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-text">RV</span>
+            <span class="logo-bracket">/&gt;</span>
+          </a>
+          <p>Building the future with AI</p>
+        </div>
+        
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        
+        <div class="footer-social" id="footer-social">
+          <a href="https://github.com/codeFafnir" target="_blank" rel="noopener" aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="mailto:r1venkatesan@ucsd.edu" aria-label="Email">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> Raghusrinivasan Venkatesan. All rights reserved.</p>
+        <p class="footer-credit">
+          Crafted with <i data-lucide="heart" class="heart-icon"></i> and code
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="script.js"></script>
+</body>
+</html>
+

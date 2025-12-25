@@ -1,0 +1,126 @@
+{
+  "personal": {
+    "name": "Raghusrinivasan Venkatesan",
+    "firstName": "Raghu",
+    "title": "Aspiring AI Engineer",
+    "subtitle": "Data Science Enthusiast",
+    "tagline": "Building intelligent systems that make a difference",
+    "bio": "Will add bio later. This is a placeholder for a compelling introduction about your journey, passions, and what drives you in the world of AI and Data Science.",
+    "email": "r1venkatesan@ucsd.edu",
+    "location": "San Diego, CA",
+    "resumeLink": "#"
+  },
+
+  "social": {
+    "github": "https://github.com/codeFafnir",
+    "linkedin": "https://linkedin.com/in/your-profile",
+    "twitter": "",
+    "email": "mailto:r1venkatesan@ucsd.edu"
+  },
+
+  "skills": {
+    "languages": [
+      { "name": "Python", "icon": "code" },
+      { "name": "JavaScript", "icon": "code" },
+      { "name": "SQL", "icon": "database" }
+    ],
+    "frameworks": [
+      { "name": "TensorFlow", "icon": "brain" },
+      { "name": "PyTorch", "icon": "brain" },
+      { "name": "React", "icon": "layout" }
+    ],
+    "tools": [
+      { "name": "Git", "icon": "git-branch" },
+      { "name": "Docker", "icon": "container" },
+      { "name": "AWS", "icon": "cloud" }
+    ],
+    "domains": [
+      { "name": "Machine Learning", "icon": "cpu" },
+      { "name": "Deep Learning", "icon": "network" },
+      { "name": "Data Analysis", "icon": "bar-chart" }
+    ]
+  },
+
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project One",
+      "description": "Placeholder description for your first project. Describe what problem it solves and technologies used.",
+      "technologies": ["Python", "TensorFlow", "FastAPI"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Project Two",
+      "description": "Placeholder description for your second project. Highlight key features and your role.",
+      "technologies": ["JavaScript", "React", "Node.js"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Project Three",
+      "description": "Placeholder description for your third project. Mention any notable achievements or metrics.",
+      "technologies": ["Python", "Pandas", "Scikit-learn"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": false
+    }
+  ],
+
+  "experience": [
+    {
+      "id": 1,
+      "role": "Position Title",
+      "company": "Company Name",
+      "location": "Location",
+      "period": "Start Date - Present",
+      "description": [
+        "Placeholder responsibility or achievement",
+        "Another placeholder for key contribution",
+        "Quantifiable impact or result"
+      ],
+      "current": true
+    },
+    {
+      "id": 2,
+      "role": "Previous Position",
+      "company": "Previous Company",
+      "location": "Location",
+      "period": "Start Date - End Date",
+      "description": [
+        "Placeholder responsibility or achievement",
+        "Key project or contribution"
+      ],
+      "current": false
+    }
+  ],
+
+  "education": [
+    {
+      "id": 1,
+      "degree": "Master's / Bachelor's Degree",
+      "field": "Computer Science / Data Science",
+      "institution": "UC San Diego",
+      "location": "San Diego, CA",
+      "period": "Year - Year",
+      "details": [
+        "Relevant coursework or achievements",
+        "GPA or honors (optional)"
+      ]
+    }
+  ],
+
+  "stats": [
+    { "value": "X+", "label": "Projects Completed" },
+    { "value": "X+", "label": "Technologies" },
+    { "value": "X+", "label": "Years Learning" }
+  ]
+}
+
