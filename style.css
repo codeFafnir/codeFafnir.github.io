@@ -788,10 +788,20 @@ ul, ol {
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  align-items: start; /* Allow cards to have natural height */
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    columns: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    columns: 3;
+  }
 }
 
 .skill-category {
@@ -799,6 +809,8 @@ ul, ol {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  break-inside: avoid; /* Prevent card from breaking across columns */
   transition: all var(--transition-base);
 }
 
