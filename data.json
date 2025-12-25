@@ -5,7 +5,7 @@
     "title": "Aspiring AI Engineer",
     "subtitle": "Data Science Enthusiast",
     "tagline": "Building intelligent systems that make a difference",
-    "bio": "Will add bio later. This is a placeholder for a compelling introduction about your journey, passions, and what drives you in the world of AI and Data Science.",
+    "bio": "I'm a first-year Master's student in Electrical and Computer Engineering at UC San Diego, specializing in Machine Learning and Data Science. I'm deeply curious about how intelligent systems reason, collaborate, and evolve—especially when grounded in strong data foundations and thoughtful system design. My interests lie in Agentic AI, multi-agent collaboration, and the full lifecycle of large language models—from fine-tuning and post-training to alignment, safety, and inference optimization. I enjoy exploring how LLMs can be orchestrated as reliable, goal-driven agents, how they communicate with each other, and how we can design guardrails that make these systems both powerful and trustworthy. I consider myself a robust learner—someone who learns by building, questioning assumptions, and continuously experimenting. I'm always curious about new ideas, emerging research, and practical techniques that push AI systems closer to real-world usefulness. I'm particularly drawn to problems at the intersection of modeling, systems, and product thinking, where insights translate into decisions and behavior. I'm open to collaboration, research discussions, and building things with people who enjoy thinking deeply about AI, data, and impact.",
     "email": "r1venkatesan@ucsd.edu",
     "location": "San Diego, CA",
     "resumeLink": "#"
@@ -13,7 +13,7 @@
 
   "social": {
     "github": "https://github.com/codeFafnir",
-    "linkedin": "https://linkedin.com/in/your-profile",
+    "linkedin": "https://www.linkedin.com/in/raghusrinivasan-j-v-6768991a7/",
     "twitter": "",
     "email": "mailto:r1venkatesan@ucsd.edu"
   },
@@ -21,23 +21,41 @@
   "skills": {
     "languages": [
       { "name": "Python", "icon": "code" },
-      { "name": "JavaScript", "icon": "code" },
-      { "name": "SQL", "icon": "database" }
+      { "name": "C/C++", "icon": "code" },
+      { "name": "SQL", "icon": "database" },
+      {"name": "Typescript", "icon": "code"}
     ],
     "frameworks": [
       { "name": "TensorFlow", "icon": "brain" },
       { "name": "PyTorch", "icon": "brain" },
-      { "name": "React", "icon": "layout" }
+      { "name": "Scikit-learn", "icon": "brain" },
+      { "name": "Pandas", "icon": "brain" },
+      { "name": "Transformers", "icon": "brain" },
+      { "name": "LangChain", "icon": "brain" },
+      {"name": "LangFuse", "icon": "brain"},
+      {"name": "Pydantic", "icon": "brain"},
+      {"name": "FastAPI", "icon": "brain"},
+      {"name": "Streamlit", "icon": "brain"},
+      {"name": "LangGraph", "icon": "brain"},
+      {"name": "FastAPI", "icon": "brain"},
+      {"name": "boto3", "icon": "brain"}
     ],
     "tools": [
       { "name": "Git", "icon": "git-branch" },
       { "name": "Docker", "icon": "container" },
-      { "name": "AWS", "icon": "cloud" }
+      { "name": "AWS", "icon": "cloud" },
+      {"name": "Hugging Face", "icon": "brain"}
     ],
     "domains": [
       { "name": "Machine Learning", "icon": "cpu" },
       { "name": "Deep Learning", "icon": "network" },
-      { "name": "Data Analysis", "icon": "bar-chart" }
+      { "name": "Data Analysis", "icon": "bar-chart" },
+      { "name": "Agentic AI", "icon": "brain"},
+      { "name": "Multi-agent Collaboration", "icon": "brain"},
+      { "name": "Large Language Models", "icon": "brain"},
+      { "name": "Fine-tuning", "icon": "brain"},
+      { "name": "Safety", "icon": "brain"},
+      { "name": "Inference Optimization", "icon": "brain"}
     ]
   },
 
@@ -77,50 +95,88 @@
   "experience": [
     {
       "id": 1,
-      "role": "Position Title",
-      "company": "Company Name",
-      "location": "Location",
-      "period": "Start Date - Present",
+      "role": "Data Scientist - 1 (Generative AI)",
+      "company": "OneByZero.ai",
+      "location": "Bangalore, India",
+      "period": "Nov 2024 - Aug 2025",
       "description": [
         "Placeholder responsibility or achievement",
         "Another placeholder for key contribution",
         "Quantifiable impact or result"
       ],
-      "current": true
+      "current": false
     },
     {
       "id": 2,
-      "role": "Previous Position",
-      "company": "Previous Company",
-      "location": "Location",
-      "period": "Start Date - End Date",
+      "role": "Jr. Data Scientist",
+      "company": "App Orchid",
+      "location": "Hyderabad, India",
+      "period": "Jul 2024 - Oct 2024",
       "description": [
         "Placeholder responsibility or achievement",
         "Key project or contribution"
       ],
       "current": false
-    }
+    },
+    {
+        "id": 3,
+        "role": "Associate Data Science Intern",
+        "company": "NoBroker Technologies",
+        "location": "Bangalore, India",
+        "period": "Jul 2024 - Oct 2024",
+        "description": [
+          "Placeholder responsibility or achievement",
+          "Key project or contribution"
+        ],
+        "current": false
+      },
+      {
+        "id": 4,
+        "role": "MITACS Globalink Research Intern",
+        "company": "University Laval",
+        "location": "Quebec, Canada",
+        "period": "May 2023 - Aug 2023",
+        "description": [
+          "Worked on a project to develop a recommendation system for the University of Laval",
+          "Key project or contribution" 
+        ],
+        "current": false
+      }
   ],
 
   "education": [
     {
       "id": 1,
-      "degree": "Master's / Bachelor's Degree",
-      "field": "Computer Science / Data Science",
+      "degree": "Master of Science",
+      "field": "Electrical and Computer Engineering (Machine Learning & Data Science)",
       "institution": "UC San Diego",
       "location": "San Diego, CA",
-      "period": "Year - Year",
+      "period": "Sep 2025 - Present",
       "details": [
-        "Relevant coursework or achievements",
-        "GPA or honors (optional)"
-      ]
+        "Specializing in Machine Learning and Data Science",
+        "Relevant coursework or achievements"
+      ],
+      "current": true
+    },
+    {
+      "id": 2,
+      "degree": "Dual Degree (B.Tech + M.Tech)",
+      "field": "Industrial and Systems Engineering",
+      "institution": "Indian Institute of Technology Kharagpur",
+      "location": "Kharagpur, India",
+      "period": "Aug 2019 - Apr 2024",
+      "details": [
+        "Specializing in Industrial and Systems Engineering",
+        "Relevant coursework or achievements"
+      ],
+      "current": false
     }
   ],
 
   "stats": [
-    { "value": "X+", "label": "Projects Completed" },
-    { "value": "X+", "label": "Technologies" },
-    { "value": "X+", "label": "Years Learning" }
+    { "value": "4+", "label": "Projects Completed" },
+    { "value": "10+", "label": "Technologies" },
+    { "value": "4+", "label": "Years Learning" }
   ]
 }
 

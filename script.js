@@ -217,7 +217,7 @@ class ContentRenderer {
     // Render education
     if (education && education.length > 0) {
       timelineHTML += education.map(edu => `
-        <div class="timeline-item animate-on-scroll">
+        <div class="timeline-item ${edu.current ? 'current' : ''} animate-on-scroll">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-header">
@@ -225,6 +225,7 @@ class ContentRenderer {
               <span class="timeline-period">${edu.period}</span>
             </div>
             <p class="timeline-company">${edu.institution} • ${edu.location}</p>
+            <p class="timeline-field">${edu.field || ''}</p>
             <ul class="timeline-description">
               ${edu.details.map(item => `<li>${item}</li>`).join('')}
             </ul>

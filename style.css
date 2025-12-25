@@ -1070,6 +1070,13 @@ ul, ol {
 .timeline-company {
   font-size: 0.95rem;
   color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-field {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
   margin-bottom: 1rem;
 }
 
