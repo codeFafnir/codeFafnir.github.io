@@ -5,7 +5,7 @@
     "title": "Aspiring AI Engineer",
     "subtitle": "Data Science Enthusiast",
     "tagline": "Building intelligent systems that make a difference",
-    "bio": "I'm a first-year Master's student in Electrical and Computer Engineering at UC San Diego, specializing in Machine Learning and Data Science. I'm deeply curious about how intelligent systems reason, collaborate, and evolve—especially when grounded in strong data foundations and thoughtful system design. My interests lie in Agentic AI, multi-agent collaboration, and the full lifecycle of large language models—from fine-tuning and post-training to alignment, safety, and inference optimization. I enjoy exploring how LLMs can be orchestrated as reliable, goal-driven agents, how they communicate with each other, and how we can design guardrails that make these systems both powerful and trustworthy. I consider myself a robust learner—someone who learns by building, questioning assumptions, and continuously experimenting. I'm always curious about new ideas, emerging research, and practical techniques that push AI systems closer to real-world usefulness. I'm particularly drawn to problems at the intersection of modeling, systems, and product thinking, where insights translate into decisions and behavior. I'm open to collaboration, research discussions, and building things with people who enjoy thinking deeply about AI, data, and impact.",
+    "bio": "I’m a first-year Master’s student in Electrical and Computer Engineering at UC San Diego, specializing in Machine Learning and Data Science. I’m deeply curious about how intelligent systems reason, collaborate, and evolve—especially when built on strong data foundations and thoughtful system design. My interests span Agentic AI, multi-agent collaboration, and the full lifecycle of large language models, including fine-tuning, post-training, alignment, safety, and inference optimization. I enjoy exploring how LLMs can be orchestrated as reliable, goal-driven agents and how well-designed guardrails can make these systems both powerful and trustworthy. I’m a robust learner who learns by building, questioning assumptions, and experimenting. I’m drawn to problems at the intersection of modeling, systems, and product thinking, where insights translate into real-world decisions and behavior. Currently based in San Diego, I’m open to collaboration, research discussions, and building impactful AI systems together.",
     "email": "r1venkatesan@ucsd.edu",
     "location": "San Diego, CA",
     "resumeLink": "#"
@@ -62,47 +62,36 @@
   "projects": [
     {
       "id": 1,
-      "title": "Project One",
-      "description": "Placeholder description for your first project. Describe what problem it solves and technologies used.",
-      "technologies": ["Python", "TensorFlow", "FastAPI"],
+      "title": "Fashion Recommendation System",
+      "description": "Designed a four-stage recommendation pipeline that transformed raw H&M transaction data into a production-ready system. The workflow progressed from data preprocessing to multi-strategy candidate generation, feature engineering, and ensemble model training, with each stage building on the last. The system was optimized for memory efficiency and Apple Silicon performance, and evaluated rigorously to ensure strong results on the MAP@12 metric.",
+      "technologies": ["Python", "PyTorch", "LightGBM", "Three-tower Neural Network", "Transformers"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir/fashion_recommendation_system",
       "featured": true
     },
     {
       "id": 2,
-      "title": "Project Two",
-      "description": "Placeholder description for your second project. Highlight key features and your role.",
-      "technologies": ["JavaScript", "React", "Node.js"],
+      "title": "Time Series Forecasting for Walmart Retail Sales",
+      "description": "I built retail demand forecasting pipeline on Walmart’s M5 hierarchical sales data, comparing classical time series models with modern machine learning and deep learning approaches. The work focused on practical challenges such as feature engineering from calendar and pricing data, handling seasonality and intermittent demand, and balancing accuracy with computational efficiency. By benchmarking models including ARIMA variants, gradient boosting, and N-BEATS, I derived actionable insights on which approaches scale best for production use, highlighting how model choice and data design directly impact forecasting reliability in real-world retail systems.",
+      "technologies": ["Python", "PyTorch", "LightGBM"],
       "image": "",
       "liveLink": "#",
       "repoLink": "#",
       "featured": true
-    },
-    {
-      "id": 3,
-      "title": "Project Three",
-      "description": "Placeholder description for your third project. Mention any notable achievements or metrics.",
-      "technologies": ["Python", "Pandas", "Scikit-learn"],
-      "image": "",
-      "liveLink": "#",
-      "repoLink": "#",
-      "featured": false
     }
   ],
 
   "experience": [
     {
       "id": 1,
-      "role": "Data Scientist - 1 (Generative AI)",
+      "role": "Data Scientist - 1 (Gen AI)",
       "company": "OneByZero.ai",
       "location": "Bangalore, India",
       "period": "Nov 2024 - Aug 2025",
       "description": [
-        "Placeholder responsibility or achievement",
-        "Another placeholder for key contribution",
-        "Quantifiable impact or result"
+        "I designed and deployed production-grade generative AI systems spanning agentic workflows, retrieval-augmented generation, and enterprise AI platforms on AWS. My work included building multi-agent orchestration, LLMOps monitoring, and safety guardrails, for document intelligence, and CRM-focused AI applications using tools like LangChain, FastAPI, and cloud-native services.",
+        "The systems I helped build reduced manual effort and response times at scale, enabling faster decision-making and more reliable AI deployments for enterprise teams. These solutions automated high-volume workflows, improved customer engagement through real-time AI assistance, and delivered secure, observable, and dependable AI systems used daily in production environments."
       ],
       "current": false
     },
@@ -113,8 +102,8 @@
       "location": "Hyderabad, India",
       "period": "Jul 2024 - Oct 2024",
       "description": [
-        "Placeholder responsibility or achievement",
-        "Key project or contribution"
+        "I built RAG-based systems for entity extraction and long-document summarization, with a focus on processing complex legal texts. This included prompt engineering for structured clause and sub-clause extraction from large contracts, as well as research into OCR-based approaches for reliable clause detection in scanned legal documents.",
+        "The solutions significantly improved accuracy and efficiency in legal document analysis, boosting extraction precision. This enabled faster review of large contracts and laid the groundwork for scalable, AI-assisted legal document analysis workflows."
       ],
       "current": false
     },
@@ -125,20 +114,8 @@
         "location": "Bangalore, India",
         "period": "Jul 2024 - Oct 2024",
         "description": [
-          "Placeholder responsibility or achievement",
-          "Key project or contribution"
-        ],
-        "current": false
-      },
-      {
-        "id": 4,
-        "role": "Associate Data Science Intern",
-        "company": "Previous Company",
-        "location": "Location",
-        "period": "Date - Date",
-        "description": [
-          "Placeholder responsibility or achievement",
-          "Key project or contribution"
+          "I focused on improving semantic representations for code-mixed customer support dialogues by generating high-quality text embeddings at scale. This involved large-scale text preprocessing, fine-tuning transformer models using unsupervised contrastive learning methods, and pre-training multilingual models with masked language modeling to better capture semantic similarity across noisy, real-world text.",
+          "The improved embeddings led to significantly denser and more coherent clusters, enabling better grouping of semantically similar conversations. This directly enhanced downstream analysis and understanding of customer support interactions, improving the reliability of large-scale text clustering in multilingual and code-mixed settings."
         ],
         "current": false
       }
@@ -152,8 +129,8 @@
       "location": "Quebec, Canada",
       "period": "May 2023 - Aug 2023",
       "description": [
-        "Worked on a project to develop a recommendation system for the University of Laval",
-        "Key project or contribution"
+        "I explored the use of machine learning to accelerate solution search for the Graph Clear Problem, modeling pursuit–evasion scenarios on 2D planar graphs. This involved formulating the problem using constraint programming, generating synthetic training data, engineering informative graph features, and training decision tree regressors to learn interpretable decision rules.",
+        "The learned models achieved comparable solution quality to traditional methods while improving search efficiency for small-scale instances. This work demonstrated how ML-driven heuristics can complement classical optimization techniques by reducing solution time without sacrificing correctness."
       ],
       "current": false
     }
@@ -168,8 +145,7 @@
       "location": "San Diego, CA",
       "period": "Sep 2025 - Present",
       "details": [
-        "Specializing in Machine Learning and Data Science",
-        "Relevant coursework or achievements"
+        "MS in Electrical and Computer Engineering at UC San Diego, with a specialization in Machine Learning and Data Science, focused on building and deploying data-driven intelligent systems."
       ],
       "current": true
     },
@@ -181,8 +157,7 @@
       "location": "Kharagpur, India",
       "period": "Aug 2019 - Apr 2024",
       "details": [
-        "Specializing in Industrial and Systems Engineering",
-        "Relevant coursework or achievements"
+        "Completed a dual-degree program with a B.Tech and an M.Tech in Industrial and Systems Engineering with a Microspecialization in Artificial Intelligence from Center of Excellence in Artificial Intelligence, IIT Kharagpur"
       ],
       "current": false
     }
