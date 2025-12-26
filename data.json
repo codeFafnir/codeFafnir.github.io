@@ -132,16 +132,31 @@
       },
       {
         "id": 4,
-        "role": "MITACS Globalink Research Intern",
-        "company": "University Laval",
-        "location": "Quebec, Canada",
-        "period": "May 2023 - Aug 2023",
+        "role": "Associate Data Science Intern",
+        "company": "Previous Company",
+        "location": "Location",
+        "period": "Date - Date",
         "description": [
-          "Worked on a project to develop a recommendation system for the University of Laval",
-          "Key project or contribution" 
+          "Placeholder responsibility or achievement",
+          "Key project or contribution"
         ],
         "current": false
       }
+  ],
+
+  "research": [
+    {
+      "id": 1,
+      "role": "MITACS Globalink Research Intern",
+      "institution": "University Laval",
+      "location": "Quebec, Canada",
+      "period": "May 2023 - Aug 2023",
+      "description": [
+        "Worked on a project to develop a recommendation system for the University of Laval",
+        "Key project or contribution"
+      ],
+      "current": false
+    }
   ],
 
   "education": [

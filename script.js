@@ -29,6 +29,7 @@ const DOM = {
   skillsDomains: document.getElementById('skills-domains'),
   projectsGrid: document.getElementById('projects-grid'),
   timelineExperience: document.getElementById('timeline-experience'),
+  timelineResearch: document.getElementById('timeline-research'),
   timelineEducation: document.getElementById('timeline-education'),
   
   // Dynamic text elements
@@ -187,9 +188,9 @@ class ContentRenderer {
 
   // Render timeline (experience + education)
   renderTimeline() {
-    const { experience, education } = this.data;
+    const { experience, research, education } = this.data;
 
-    // Render experience
+    // Render work experience
     if (DOM.timelineExperience && experience && experience.length > 0) {
       DOM.timelineExperience.innerHTML = experience.map(exp => `
         <div class="timeline-item ${exp.current ? 'current' : ''} animate-on-scroll">
@@ -202,6 +203,25 @@ class ContentRenderer {
             <p class="timeline-company">${exp.company} • ${exp.location}</p>
             <ul class="timeline-description">
               ${exp.description.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render research experience
+    if (DOM.timelineResearch && research && research.length > 0) {
+      DOM.timelineResearch.innerHTML = research.map(res => `
+        <div class="timeline-item ${res.current ? 'current' : ''} animate-on-scroll">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-role">${res.role}</h3>
+              <span class="timeline-period">${res.period}</span>
+            </div>
+            <p class="timeline-company">${res.institution} • ${res.location}</p>
+            <ul class="timeline-description">
+              ${res.description.map(item => `<li>${item}</li>`).join('')}
             </ul>
           </div>
         </div>
