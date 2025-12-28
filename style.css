@@ -967,8 +967,25 @@ ul, ol {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
   flex: 1;
+  /* Expandable text feature */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+}
+
+.project-description:hover {
+  -webkit-line-clamp: 5;
+}
+
+.project-description.expanded {
+  -webkit-line-clamp: unset;
+  overflow: visible;
 }
 
 .project-tech {
@@ -1136,6 +1153,20 @@ ul, ol {
 
 .timeline-description {
   list-style: none;
+  /* Expandable text feature */
+  max-height: 4.5rem;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+  cursor: pointer;
+  position: relative;
+}
+
+.timeline-description:hover {
+  max-height: 7rem;
+}
+
+.timeline-description.expanded {
+  max-height: none;
 }
 
 .timeline-description li {
@@ -1151,6 +1182,46 @@ ul, ol {
   position: absolute;
   left: 0;
   color: var(--accent-primary);
+}
+
+/* ========== EXPANDABLE TEXT INDICATORS ========== */
+.expandable-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(transparent, var(--bg-card));
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.expanded + .expandable-fade,
+.expanded .expandable-fade {
+  display: none;
+}
+
+.expand-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--accent-primary);
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  cursor: pointer;
+}
+
+.project-card:hover .expand-hint,
+.timeline-content:hover .expand-hint {
+  opacity: 1;
+}
+
+.expand-hint:hover {
+  text-decoration: underline;
+}
+
+.expand-hint.hidden {
+  display: none;
 }
 
 .timeline-type {
