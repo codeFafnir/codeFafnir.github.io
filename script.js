@@ -146,8 +146,8 @@ class ContentRenderer {
     const { projects } = this.data;
     if (!projects || !DOM.projectsGrid) return;
 
-    DOM.projectsGrid.innerHTML = projects.map(project => `
-      <article class="project-card animate-on-scroll">
+    DOM.projectsGrid.innerHTML = projects.map((project, index) => `
+      <article class="project-card animate-on-scroll" data-type="project" data-index="${index}">
         <div class="project-image">
           ${project.image 
             ? `<img src="${project.image}" alt="${project.title}">` 
@@ -159,12 +159,12 @@ class ContentRenderer {
             <h3 class="project-title">${project.title}</h3>
             <div class="project-links">
               ${project.repoLink && project.repoLink !== '#' ? `
-                <a href="${project.repoLink}" target="_blank" rel="noopener" class="project-link" aria-label="View code">
+                <a href="${project.repoLink}" target="_blank" rel="noopener" class="project-link" aria-label="View code" onclick="event.stopPropagation()">
                   <i data-lucide="github"></i>
                 </a>
               ` : ''}
               ${project.liveLink && project.liveLink !== '#' ? `
-                <a href="${project.liveLink}" target="_blank" rel="noopener" class="project-link" aria-label="View live">
+                <a href="${project.liveLink}" target="_blank" rel="noopener" class="project-link" aria-label="View live" onclick="event.stopPropagation()">
                   <i data-lucide="external-link"></i>
                 </a>
               ` : ''}
@@ -192,10 +192,10 @@ class ContentRenderer {
 
     // Render work experience
     if (DOM.timelineExperience && experience && experience.length > 0) {
-      DOM.timelineExperience.innerHTML = experience.map(exp => `
+      DOM.timelineExperience.innerHTML = experience.map((exp, index) => `
         <div class="timeline-item ${exp.current ? 'current' : ''} animate-on-scroll">
           <div class="timeline-marker"></div>
-          <div class="timeline-content">
+          <div class="timeline-content" data-type="experience" data-index="${index}">
             <div class="timeline-header">
               <h3 class="timeline-role">${exp.role}</h3>
               <span class="timeline-period">${exp.period}</span>
@@ -211,10 +211,10 @@ class ContentRenderer {
 
     // Render research experience
     if (DOM.timelineResearch && research && research.length > 0) {
-      DOM.timelineResearch.innerHTML = research.map(res => `
+      DOM.timelineResearch.innerHTML = research.map((res, index) => `
         <div class="timeline-item ${res.current ? 'current' : ''} animate-on-scroll">
           <div class="timeline-marker"></div>
-          <div class="timeline-content">
+          <div class="timeline-content" data-type="research" data-index="${index}">
             <div class="timeline-header">
               <h3 class="timeline-role">${res.role}</h3>
               <span class="timeline-period">${res.period}</span>
@@ -230,10 +230,10 @@ class ContentRenderer {
 
     // Render education
     if (DOM.timelineEducation && education && education.length > 0) {
-      DOM.timelineEducation.innerHTML = education.map(edu => `
+      DOM.timelineEducation.innerHTML = education.map((edu, index) => `
         <div class="timeline-item ${edu.current ? 'current' : ''} animate-on-scroll">
           <div class="timeline-marker"></div>
-          <div class="timeline-content">
+          <div class="timeline-content" data-type="education" data-index="${index}">
             <div class="timeline-header">
               <h3 class="timeline-role">${edu.degree}</h3>
               <span class="timeline-period">${edu.period}</span>
@@ -508,6 +508,256 @@ class Utilities {
 }
 
 // ============================================
+// MODAL SYSTEM
+// ============================================
+class Modal {
+  constructor() {
+    this.overlay = document.getElementById('modal-overlay');
+    this.content = document.getElementById('modal-content');
+    this.closeBtn = document.getElementById('modal-close');
+    this.isOpen = false;
+    this.currentData = null;
+    
+    this.init();
+  }
+
+  init() {
+    // Close button click
+    this.closeBtn?.addEventListener('click', () => this.close());
+
+    // Close on overlay click (outside modal)
+    this.overlay?.addEventListener('click', (e) => {
+      if (e.target === this.overlay) {
+        this.close();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    });
+  }
+
+  open(type, data) {
+    this.currentData = data;
+    this.isOpen = true;
+
+    // Generate content based on type
+    let html = '';
+    switch (type) {
+      case 'project':
+        html = this.renderProjectModal(data);
+        break;
+      case 'experience':
+        html = this.renderExperienceModal(data);
+        break;
+      case 'research':
+        html = this.renderResearchModal(data);
+        break;
+      case 'education':
+        html = this.renderEducationModal(data);
+        break;
+    }
+
+    this.content.innerHTML = html;
+    
+    // Re-initialize Lucide icons in modal
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Show modal
+    this.overlay.classList.add('active');
+    document.body.classList.add('modal-open');
+  }
+
+  close() {
+    this.isOpen = false;
+    this.overlay.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  }
+
+  renderProjectModal(project) {
+    return `
+      <div class="modal-header">
+        <span class="modal-tag">
+          <i data-lucide="folder-git-2"></i>
+          Project
+        </span>
+        <h2 class="modal-title">${project.title}</h2>
+        ${project.featured ? '<span class="modal-subtitle">⭐ Featured Project</span>' : ''}
+      </div>
+      
+      ${project.image ? `
+        <div class="modal-image">
+          <img src="${project.image}" alt="${project.title}">
+        </div>
+      ` : `
+        <div class="modal-image">
+          <i data-lucide="image"></i>
+        </div>
+      `}
+      
+      <div class="modal-body">
+        <div class="modal-description">
+          <p>${project.description}</p>
+        </div>
+        
+        ${project.technologies && project.technologies.length > 0 ? `
+          <div class="modal-tech-section">
+            <p class="modal-tech-label">Technologies Used</p>
+            <div class="modal-tech-tags">
+              ${project.technologies.map(tech => `
+                <span class="modal-tech-tag">${tech}</span>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+      </div>
+      
+      <div class="modal-footer">
+        ${project.repoLink && project.repoLink !== '#' ? `
+          <a href="${project.repoLink}" target="_blank" rel="noopener" class="btn btn-outline">
+            <i data-lucide="github"></i>
+            View Repository
+          </a>
+        ` : ''}
+        ${project.liveLink && project.liveLink !== '#' ? `
+          <a href="${project.liveLink}" target="_blank" rel="noopener" class="btn btn-primary">
+            <i data-lucide="external-link"></i>
+            Live Demo
+          </a>
+        ` : ''}
+      </div>
+    `;
+  }
+
+  renderExperienceModal(exp) {
+    return `
+      <div class="modal-header">
+        <span class="modal-tag">
+          <i data-lucide="briefcase"></i>
+          Work Experience
+        </span>
+        <h2 class="modal-title">${exp.role}</h2>
+        <p class="modal-subtitle">${exp.company}</p>
+        
+        <div class="modal-meta">
+          <span class="modal-meta-item">
+            <i data-lucide="map-pin"></i>
+            ${exp.location}
+          </span>
+          <span class="modal-meta-item">
+            <i data-lucide="calendar"></i>
+            ${exp.period}
+          </span>
+          ${exp.current ? `
+            <span class="modal-meta-item current">
+              <i data-lucide="circle-dot"></i>
+              Current Position
+            </span>
+          ` : ''}
+        </div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-description">
+          ${Array.isArray(exp.description) 
+            ? exp.description.map(item => `<p>${item}</p>`).join('') 
+            : `<p>${exp.description}</p>`
+          }
+        </div>
+      </div>
+    `;
+  }
+
+  renderResearchModal(res) {
+    return `
+      <div class="modal-header">
+        <span class="modal-tag">
+          <i data-lucide="flask-conical"></i>
+          Research Experience
+        </span>
+        <h2 class="modal-title">${res.role}</h2>
+        <p class="modal-subtitle">${res.institution}</p>
+        
+        <div class="modal-meta">
+          <span class="modal-meta-item">
+            <i data-lucide="map-pin"></i>
+            ${res.location}
+          </span>
+          <span class="modal-meta-item">
+            <i data-lucide="calendar"></i>
+            ${res.period}
+          </span>
+          ${res.current ? `
+            <span class="modal-meta-item current">
+              <i data-lucide="circle-dot"></i>
+              Current
+            </span>
+          ` : ''}
+        </div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-description">
+          ${Array.isArray(res.description) 
+            ? res.description.map(item => `<p>${item}</p>`).join('') 
+            : `<p>${res.description}</p>`
+          }
+        </div>
+      </div>
+    `;
+  }
+
+  renderEducationModal(edu) {
+    return `
+      <div class="modal-header">
+        <span class="modal-tag">
+          <i data-lucide="graduation-cap"></i>
+          Education
+        </span>
+        <h2 class="modal-title">${edu.degree}</h2>
+        <p class="modal-subtitle">${edu.institution}</p>
+        
+        <div class="modal-meta">
+          <span class="modal-meta-item">
+            <i data-lucide="map-pin"></i>
+            ${edu.location}
+          </span>
+          <span class="modal-meta-item">
+            <i data-lucide="calendar"></i>
+            ${edu.period}
+          </span>
+          ${edu.current ? `
+            <span class="modal-meta-item current">
+              <i data-lucide="circle-dot"></i>
+              Currently Enrolled
+            </span>
+          ` : ''}
+        </div>
+      </div>
+      
+      <div class="modal-body">
+        ${edu.field ? `
+          <div class="modal-description">
+            <p><strong>Field of Study:</strong> ${edu.field}</p>
+          </div>
+        ` : ''}
+        
+        ${edu.details && edu.details.length > 0 ? `
+          <ul class="modal-list">
+            ${edu.details.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        ` : ''}
+      </div>
+    `;
+  }
+}
+
+// ============================================
 // TYPING EFFECT (Optional Enhancement)
 // ============================================
 class TypingEffect {
@@ -560,6 +810,7 @@ class App {
     this.data = null;
     this.navigation = null;
     this.animations = null;
+    this.modal = null;
   }
 
   async init() {
@@ -593,14 +844,66 @@ class App {
     // Initialize animations
     this.animations = new Animations();
 
+    // Initialize modal
+    this.modal = new Modal();
+
     // Re-observe elements after content is loaded
     setTimeout(() => {
       this.animations.observeNewElements();
       Utilities.initIcons();
+      
+      // Attach click handlers to cards after content is loaded
+      this.attachCardClickHandlers();
     }, 150);
 
     // Log success
     console.log('Portfolio loaded successfully!');
+  }
+
+  // Attach click handlers to project and timeline cards
+  attachCardClickHandlers() {
+    // Project cards
+    document.querySelectorAll('.project-card[data-type="project"]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Don't open modal if clicking on external links
+        if (e.target.closest('.project-link')) return;
+        
+        const index = parseInt(card.dataset.index);
+        if (this.data?.projects?.[index]) {
+          this.modal.open('project', this.data.projects[index]);
+        }
+      });
+    });
+
+    // Experience cards
+    document.querySelectorAll('.timeline-content[data-type="experience"]').forEach(card => {
+      card.addEventListener('click', () => {
+        const index = parseInt(card.dataset.index);
+        if (this.data?.experience?.[index]) {
+          this.modal.open('experience', this.data.experience[index]);
+        }
+      });
+    });
+
+    // Research cards
+    document.querySelectorAll('.timeline-content[data-type="research"]').forEach(card => {
+      card.addEventListener('click', () => {
+        const index = parseInt(card.dataset.index);
+        if (this.data?.research?.[index]) {
+          this.modal.open('research', this.data.research[index]);
+        }
+      });
+    });
+
+    // Education cards
+    document.querySelectorAll('.timeline-content[data-type="education"]').forEach(card => {
+      card.addEventListener('click', () => {
+        const index = parseInt(card.dataset.index);
+        if (this.data?.education?.[index]) {
+          this.modal.open('education', this.data.education[index]);
+        }
+      });
+    });
   }
 }
 
@@ -616,6 +919,7 @@ app.init();
 window.Portfolio = {
   app,
   Utilities,
-  TypingEffect
+  TypingEffect,
+  Modal
 };
 

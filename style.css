@@ -1228,23 +1228,7 @@ ul, ol {
   color: var(--accent-primary);
 }
 
-/* ========== HOVER TO REVEAL INDICATORS ========== */
-
-/* Add subtle indicator that card is hoverable */
-.project-title::after,
-.timeline-role::after {
-  content: ' ↓';
-  font-size: 0.7em;
-  color: var(--text-muted);
-  opacity: 0.5;
-  transition: opacity var(--transition-fast);
-}
-
-.project-card:hover .project-title::after,
-.timeline-content:hover .timeline-role::after {
-  content: ' ↑';
-  opacity: 0;
-}
+/* ========== INTERACTIVE CARD INDICATORS ========== */
 
 /* Highlight title on hover to indicate interactivity */
 .project-title,
@@ -1255,6 +1239,21 @@ ul, ol {
 .project-card:hover .project-title,
 .timeline-content:hover .timeline-role {
   color: var(--accent-primary);
+}
+
+/* Add expand icon indicator */
+.project-title::after,
+.timeline-role::after {
+  content: ' ⤢';
+  font-size: 0.7em;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.project-card:hover .project-title::after,
+.timeline-content:hover .timeline-role::after {
+  opacity: 0.7;
 }
 
 .timeline-type {
@@ -1591,6 +1590,361 @@ ul, ol {
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ---------- MODAL OVERLAY ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Blurred backdrop */
+.modal-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  max-height: 85vh;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color-hover);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 60px var(--accent-glow);
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  transition: transform var(--transition-slow);
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: rotate(90deg);
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.modal-content {
+  padding: 2.5rem;
+  max-height: 85vh;
+  overflow-y: auto;
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-tertiary);
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+}
+
+/* Modal Header */
+.modal-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-tertiary);
+  background: rgba(6, 182, 212, 0.1);
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.modal-tag svg {
+  width: 14px;
+  height: 14px;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.modal-meta-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-primary);
+}
+
+.modal-meta-item.current {
+  color: var(--success);
+}
+
+.modal-meta-item.current svg {
+  color: var(--success);
+}
+
+/* Modal Body */
+.modal-body {
+  margin-bottom: 1.5rem;
+}
+
+.modal-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.modal-description p {
+  margin-bottom: 1rem;
+}
+
+.modal-description p:last-child {
+  margin-bottom: 0;
+}
+
+.modal-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.modal-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.modal-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+/* Modal Technologies/Skills */
+.modal-tech-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.modal-tech-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.modal-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.modal-tech-tag {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--accent-tertiary);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.modal-tech-tag:hover {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: var(--accent-tertiary);
+}
+
+/* Modal Footer with Links */
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.modal-footer .btn {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* Modal Image */
+.modal-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-image svg {
+  width: 60px;
+  height: 60px;
+  opacity: 0.4;
+}
+
+/* Add clickable cursor to cards */
+.project-card,
+.timeline-content {
+  cursor: pointer;
+}
+
+/* Add subtle click indicator */
+.project-card::after,
+.timeline-content::after {
+  content: 'Click to expand';
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.project-card {
+  position: relative;
+}
+
+.timeline-content {
+  position: relative;
+}
+
+.project-card:hover::after,
+.timeline-content:hover::after {
+  opacity: 0.6;
+}
+
+/* Disable body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 1rem;
+  }
+  
+  .modal-container {
+    max-height: 90vh;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+    padding-top: 3.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.4rem;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+  }
+  
+  .modal-footer .btn {
+    width: 100%;
+  }
 }
 
 /* ---------- RESPONSIVE ADJUSTMENTS ---------- */
