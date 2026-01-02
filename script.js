@@ -449,74 +449,11 @@ class Animations {
 }
 
 // ============================================
-// EXPANDABLE TEXT
+// HOVER TO REVEAL (CSS-based, no JS needed)
 // ============================================
-class ExpandableText {
-  constructor() {
-    this.initialized = false;
-  }
-
-  init() {
-    // Wait for content to be loaded, then attach listeners
-    setTimeout(() => this.attachListeners(), 300);
-  }
-
-  attachListeners() {
-    // Project descriptions
-    document.querySelectorAll('.project-description').forEach(el => {
-      if (!el.dataset.expandable) {
-        this.makeExpandable(el);
-      }
-    });
-
-    // Timeline descriptions (experience, research, education)
-    document.querySelectorAll('.timeline-description').forEach(el => {
-      if (!el.dataset.expandable) {
-        this.makeExpandable(el);
-      }
-    });
-
-    this.initialized = true;
-  }
-
-  makeExpandable(element) {
-    // Mark as initialized
-    element.dataset.expandable = 'true';
-
-    // Add click handler to toggle expand
-    element.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isExpanded = element.classList.toggle('expanded');
-      
-      // Update hint text
-      const hint = element.parentNode.querySelector('.expand-hint');
-      if (hint) {
-        hint.textContent = isExpanded ? 'Click to collapse' : 'Click to expand';
-        hint.classList.toggle('hidden', isExpanded);
-      }
-    });
-
-    // Add hint text after element if content is truncated
-    if (this.isContentTruncated(element)) {
-      const hint = document.createElement('span');
-      hint.className = 'expand-hint';
-      hint.textContent = 'Click to expand';
-      hint.addEventListener('click', () => element.click());
-      element.parentNode.insertBefore(hint, element.nextSibling);
-    }
-  }
-
-  isContentTruncated(element) {
-    // Check if content is actually truncated
-    return element.scrollHeight > element.clientHeight || 
-           element.scrollWidth > element.clientWidth;
-  }
-
-  // Call this after dynamic content is loaded
-  refresh() {
-    this.attachListeners();
-  }
-}
+// The hover-to-reveal feature is now handled entirely by CSS.
+// Descriptions are hidden by default and revealed on hover.
+// No JavaScript class needed - keeping this comment for reference.
 
 // ============================================
 // UTILITIES
@@ -623,7 +560,6 @@ class App {
     this.data = null;
     this.navigation = null;
     this.animations = null;
-    this.expandableText = null;
   }
 
   async init() {
@@ -657,13 +593,9 @@ class App {
     // Initialize animations
     this.animations = new Animations();
 
-    // Initialize expandable text
-    this.expandableText = new ExpandableText();
-
     // Re-observe elements after content is loaded
     setTimeout(() => {
       this.animations.observeNewElements();
-      this.expandableText.init();
       Utilities.initIcons();
     }, 150);
 

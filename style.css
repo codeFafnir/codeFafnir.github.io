@@ -967,25 +967,19 @@ ul, ol {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 0.5rem;
-  flex: 1;
-  /* Expandable text feature */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  margin-bottom: 1rem;
+  /* Hidden by default, reveal on hover */
+  max-height: 0;
   overflow: hidden;
-  transition: all var(--transition-base);
-  cursor: pointer;
-  position: relative;
+  opacity: 0;
+  transition: all var(--transition-slow);
 }
 
-.project-description:hover {
-  -webkit-line-clamp: 5;
-}
-
-.project-description.expanded {
-  -webkit-line-clamp: unset;
-  overflow: visible;
+/* Reveal description when hovering over the project card */
+.project-card:hover .project-description {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 0.75rem;
 }
 
 .project-tech {
@@ -1153,20 +1147,18 @@ ul, ol {
 
 .timeline-description {
   list-style: none;
-  /* Expandable text feature */
-  max-height: 4.5rem;
+  /* Hidden by default, reveal on hover */
+  max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-base);
-  cursor: pointer;
-  position: relative;
+  opacity: 0;
+  transition: all var(--transition-slow);
 }
 
-.timeline-description:hover {
-  max-height: 7rem;
-}
-
-.timeline-description.expanded {
-  max-height: none;
+/* Reveal description when hovering over the timeline content */
+.timeline-content:hover .timeline-description {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 0.75rem;
 }
 
 .timeline-description li {
@@ -1184,44 +1176,33 @@ ul, ol {
   color: var(--accent-primary);
 }
 
-/* ========== EXPANDABLE TEXT INDICATORS ========== */
-.expandable-fade {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2rem;
-  background: linear-gradient(transparent, var(--bg-card));
-  pointer-events: none;
+/* ========== HOVER TO REVEAL INDICATORS ========== */
+
+/* Add subtle indicator that card is hoverable */
+.project-title::after,
+.timeline-role::after {
+  content: ' ↓';
+  font-size: 0.7em;
+  color: var(--text-muted);
+  opacity: 0.5;
   transition: opacity var(--transition-fast);
 }
 
-.expanded + .expandable-fade,
-.expanded .expandable-fade {
-  display: none;
-}
-
-.expand-hint {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--accent-primary);
-  margin-top: 0.5rem;
+.project-card:hover .project-title::after,
+.timeline-content:hover .timeline-role::after {
+  content: ' ↑';
   opacity: 0;
-  transition: opacity var(--transition-fast);
-  cursor: pointer;
 }
 
-.project-card:hover .expand-hint,
-.timeline-content:hover .expand-hint {
-  opacity: 1;
+/* Highlight title on hover to indicate interactivity */
+.project-title,
+.timeline-role {
+  transition: color var(--transition-fast);
 }
 
-.expand-hint:hover {
-  text-decoration: underline;
-}
-
-.expand-hint.hidden {
-  display: none;
+.project-card:hover .project-title,
+.timeline-content:hover .timeline-role {
+  color: var(--accent-primary);
 }
 
 .timeline-type {
