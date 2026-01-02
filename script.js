@@ -7,7 +7,7 @@
 // CONFIGURATION
 // ============================================
 const CONFIG = {
-  dataPath: './data.json',
+  dataPath: `./data.json?v=${Date.now()}`, // Cache bust to always get fresh data
   animationThreshold: 0.15,
   scrollOffset: 100
 };
