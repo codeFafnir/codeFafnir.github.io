@@ -977,9 +977,30 @@ ul, ol {
 
 /* Reveal description when hovering over the project card */
 .project-card:hover .project-description {
-  max-height: 1000px; /* Large value to accommodate any content */
+  max-height: 120px; /* Fixed height with scroll */
   opacity: 1;
   margin-top: 0.75rem;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 0.5rem; /* Space for scrollbar */
+}
+
+/* Custom scrollbar for project descriptions */
+.project-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-description::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+.project-description::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+}
+
+.project-description::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
 }
 
 .project-tech {
@@ -1156,9 +1177,30 @@ ul, ol {
 
 /* Reveal description when hovering over the timeline content */
 .timeline-content:hover .timeline-description {
-  max-height: 1000px; /* Large value to accommodate any content */
+  max-height: 150px; /* Fixed height with scroll */
   opacity: 1;
   margin-top: 0.75rem;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 0.5rem; /* Space for scrollbar */
+}
+
+/* Custom scrollbar for timeline descriptions */
+.timeline-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeline-description::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+.timeline-description::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+}
+
+.timeline-description::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
 }
 
 .timeline-description li {
