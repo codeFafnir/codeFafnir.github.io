@@ -972,12 +972,12 @@ ul, ol {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all var(--transition-slow);
+  transition: max-height 0.5s ease, opacity 0.3s ease, margin 0.3s ease;
 }
 
 /* Reveal description when hovering over the project card */
 .project-card:hover .project-description {
-  max-height: 200px;
+  max-height: 1000px; /* Large value to accommodate any content */
   opacity: 1;
   margin-top: 0.75rem;
 }
@@ -1151,12 +1151,12 @@ ul, ol {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all var(--transition-slow);
+  transition: max-height 0.5s ease, opacity 0.3s ease, margin 0.3s ease;
 }
 
 /* Reveal description when hovering over the timeline content */
 .timeline-content:hover .timeline-description {
-  max-height: 300px;
+  max-height: 1000px; /* Large value to accommodate any content */
   opacity: 1;
   margin-top: 0.75rem;
 }
