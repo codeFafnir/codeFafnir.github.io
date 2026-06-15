@@ -164,7 +164,7 @@
 
   "experience": [
     {
-      "id": 1,
+      "id": 2,
       "role": "Data Scientist - 1 (Gen AI)",
       "company": "OneByZero.ai",
       "location": "Bangalore, India",
@@ -176,7 +176,7 @@
       "current": false
     },
     {
-      "id": 2,
+      "id": 3,
       "role": "Jr. Data Scientist",
       "company": "App Orchid",
       "location": "Hyderabad, India",
@@ -188,7 +188,7 @@
       "current": false
     },
     {
-        "id": 3,
+        "id": 4,
         "role": "Associate Data Science Intern",
         "company": "NoBroker Technologies",
         "location": "Bangalore, India",
@@ -198,6 +198,17 @@
           "The improved embeddings led to significantly denser and more coherent clusters, enabling better grouping of semantically similar conversations. This directly enhanced downstream analysis and understanding of customer support interactions, improving the reliability of large-scale text clustering in multilingual and code-mixed settings."
         ],
         "current": false
+      },
+      {
+        "id": 1,
+        "role": "Data Science Intern",
+        "company": "Capital One",
+        "location": "Plano, TX",
+        "period": "Jun 2026 - Present",
+        "description": [
+          ""
+        ],
+        "current": true
       }
   ],
 
