@@ -87,7 +87,7 @@
       "technologies": ["FastAPI", "React", "Postgres", "Gemini", "Celery", "Discord"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir/accountability-engine",
       "featured": true
     },
     {
@@ -97,7 +97,7 @@
       "technologies": ["Python", "PyTorch", "SGLang", "DFlash", "LinUCB", "LLM Inference"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir/Efficient_AI",
       "featured": true
     },
     {
@@ -107,7 +107,7 @@
       "technologies": ["Python", "PyTorch", "Transformers", "LLM Safety"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir/safety-Aware-speculative-decoding-strategies",
       "featured": true
     },
     {
@@ -117,7 +117,7 @@
       "technologies": ["Python", "JavaScript"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir/datahacks_26",
       "featured": false
     },
     {
@@ -127,7 +127,7 @@
       "technologies": ["Python", "FastAPI", "Pydantic", "Typer", "LLM"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir",
       "featured": true
     },
     {
@@ -137,7 +137,7 @@
       "technologies": ["Python", "Gemini", "SQLite", "arXiv"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir",
       "featured": true
     },
     {
@@ -147,7 +147,7 @@
       "technologies": ["FastAPI", "Next.js", "Ollama", "Tesseract", "Gemini"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir",
       "featured": true
     },
     {
@@ -157,7 +157,7 @@
       "technologies": ["Python", "FastAPI", "Next.js", "LangGraph", "Docker", "LiteLLM"],
       "image": "",
       "liveLink": "#",
-      "repoLink": "#",
+      "repoLink": "https://github.com/codeFafnir",
       "featured": true
     }
   ],
