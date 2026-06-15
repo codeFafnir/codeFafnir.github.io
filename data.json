@@ -92,7 +92,7 @@
     },
     {
       "id": 4,
-      "title": "Efficient AI",
+      "title": "Adaptive Draft Length Controller for DFlash Speculative Decoding",
       "description": "Built an adaptive DFlash speculative decoding controller that replaces a constant draft block length with LinUCB-selected variable draft lengths. The controller uses the target model's confidence on the last accepted bonus token, plus an EMA-smoothed confidence signal, to choose block-size arms during generation and update the policy from acceptance-efficiency rewards for faster response generation.",
       "technologies": ["Python", "PyTorch", "SGLang", "DFlash", "LinUCB", "LLM Inference"],
       "image": "",
@@ -202,6 +202,19 @@
   ],
 
   "research": [
+    {
+      "id": 2,
+      "role": "Student Researcher",
+      "institution": "CAIDA, UC San Diego",
+      "location": "San Diego, CA",
+      "period": "2026 - Present",
+      "description": [
+        "I built and scaled an AWS-based Capsule measurement deployment to study cloud network bottlenecks, extending a single-region setup to us-east-1, us-east-2, us-west-1, and us-west-2 with region-specific AMIs, isolated VPCs, and mirrored subnet routing.",
+        "I automated the full measurement pipeline with Terraform and Bash orchestration: Capsule and traffic instance deployment, staged bootstrap, public-Ookla route enablement, receiver NAT, multi-region Ookla test execution, and CSV collection to local storage and S3.",
+        "I improved measurement reliability by validating DPDK bridge behavior, port-8080 flow capture in Capsule DATA CSVs, configurable Ookla server selection, and deployment/experiment runbooks with observability checks for bootstrap, routing, and result verification."
+      ],
+      "current": true
+    },
     {
       "id": 1,
       "role": "MITACS Globalink Research Intern",
