@@ -79,6 +79,86 @@
       "liveLink": "#",
       "repoLink": "https://github.com/codeFafnir/scratchpad/tree/main/ECE225A",
       "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Meeting Accountability Engine",
+      "description": "Extracts commitments from meeting transcripts (Zoom VTT), tracks follow-ups, and surfaces renegotiations via Discord. Built a four-stage LLM pipeline with Gemini, Postgres, LEANN vector search, Celery beat jobs, and a React dashboard for CSE291P PA4.",
+      "technologies": ["FastAPI", "React", "Postgres", "Gemini", "Celery", "Discord"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Efficient AI",
+      "description": "Built an adaptive DFlash speculative decoding controller that replaces a constant draft block length with LinUCB-selected variable draft lengths. The controller uses the target model's confidence on the last accepted bonus token, plus an EMA-smoothed confidence signal, to choose block-size arms during generation and update the policy from acceptance-efficiency rewards for faster response generation.",
+      "technologies": ["Python", "PyTorch", "SGLang", "DFlash", "LinUCB", "LLM Inference"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "CRS-SSD: Safety-Aware Speculative Decoding",
+      "description": "Extended Speculative Safety-Aware Decoding with a per-token Composite Risk Score that replaces coarse binary mode-switching. Best configuration achieved 20.0% ASR on a high-ASR evaluation set with zero over-refusal.",
+      "technologies": ["Python", "PyTorch", "Transformers", "LLM Safety"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 6,
+      "title": "Allerio Pollen Forecast",
+      "description": "Pollen forecast system that uses iNaturalist data and Google's Pollen API to predict pollen levels for a given location. It uses a combination of machine learning and natural language processing to predict the pollen levels. It also uses a heatmap to visualize the pollen levels.",
+      "technologies": ["Python", "JavaScript"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "Legacy Architecture Modernization Engine",
+      "description": "AI-powered tool that analyzes legacy GitHub repositories via the Nia API, generates step-by-step migration plans with an LLM, and executes file changes with git commits and Markdown migration reports.",
+      "technologies": ["Python", "FastAPI", "Pydantic", "Typer", "LLM"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 8,
+      "title": "Academic Abstract Monitor",
+      "description": "Monitors arXiv for ML systems papers, applies optional keyword pre-filtering, and classifies abstracts with a two-stage Gemini pipeline (Flash Lite first pass, Flash escalation). Includes evaluation harness with gold dataset metrics.",
+      "technologies": ["Python", "Gemini", "SQLite", "arXiv"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 9,
+      "title": "Document Scanner",
+      "description": "Upload receipt or bill images, run Tesseract OCR, extract structured fields with dual local Ollama models (Gemma + GLM), fall back to Gemini when confidence is low, and evaluate against ground truth.",
+      "technologies": ["FastAPI", "Next.js", "Ollama", "Tesseract", "Gemini"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
+    },
+    {
+      "id": 10,
+      "title": "bashBuddy (TermAgent)",
+      "description": "CSE291P Assignment 3 agent project. Includes AgentDev (paper/PRD to runnable Python with Next.js IDE, Docker sandbox, and pass@k evaluation) and bashBuddy terminal agent tooling.",
+      "technologies": ["Python", "FastAPI", "Next.js", "LangGraph", "Docker", "LiteLLM"],
+      "image": "",
+      "liveLink": "#",
+      "repoLink": "#",
+      "featured": true
     }
   ],
 
