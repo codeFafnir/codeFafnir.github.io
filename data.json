@@ -112,7 +112,7 @@
     },
     {
       "id": 6,
-      "title": "Allerio Pollen Forecast",
+      "title": "Allerion: Pollen Forecast",
       "description": "Pollen forecast system that uses iNaturalist data and Google's Pollen API to predict pollen levels for a given location. It uses a combination of machine learning and natural language processing to predict the pollen levels. It also uses a heatmap to visualize the pollen levels.",
       "technologies": ["Python", "JavaScript"],
       "image": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": 10,
-      "title": "bashBuddy (TermAgent)",
+      "title": "TermAgent",
       "description": "CSE291P Assignment 3 agent project. Includes AgentDev (paper/PRD to runnable Python with Next.js IDE, Docker sandbox, and pass@k evaluation) and bashBuddy terminal agent tooling.",
       "technologies": ["Python", "FastAPI", "Next.js", "LangGraph", "Docker", "LiteLLM"],
       "image": "",
